@@ -11,3 +11,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.bg-gray {
+  background-color: #e7e7e7 !important;
+}
+
+.como-funciona-imagen {
+  max-width: 4rem;
+}

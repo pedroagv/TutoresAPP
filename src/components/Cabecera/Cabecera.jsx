@@ -1,13 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-function Header() {
+function Cabecera({ user, onLogout }) {
     return (
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
 
             <div className="container">
-                <a className="navbar-brand" href="#home">
-                    Tutori-FLY
-                </a>
+                <Link className="navbar-brand fw-bold" to="/">
+                    Tutori-FLY Online
+                </Link>
                 <button
                     className="navbar-toggler"
                     type="button"
@@ -22,32 +23,42 @@ function Header() {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                            <a className="nav-link" href="#features">
+                            <a className="nav-link" href="#Turores">
                                 Turores
                             </a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#pricing">
+                            <a className="nav-link" href="#Materias">
                                 Materias
                             </a>
                         </li>
                     </ul>
                     <ul className="navbar-nav">
                         <li className="nav-item">
-                            <a className="nav-link" href="#deets">
+                            <Link className="nav-link" to="/registro-de-usuarios">
                                 Registro Estudiante
-                            </a>
+                            </Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#deets">
+                            <Link className="nav-link" to="/registro-de-usuarios">
                                 Registro Tutores
-                            </a>
+                            </Link>
                         </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#memes">
-                                Iniciar Sesion
-                            </a>
-                        </li>
+
+                        {user ? (
+                            <>
+                                <li className="nav-item">
+                                    <span className="nav-link">Bienvenido, {user.nombres} {user.apellidos}</span>
+                                </li>
+                                <li className="nav-item">
+                                    <button className="nav-link btn" onClick={onLogout}>Cerrar sesión</button>
+                                </li>
+                            </>
+                        ) : (
+                            <li className="nav-item">
+                                <Link className="nav-link" to="/iniciar-sesion">Iniciar sesión</Link>
+                            </li>
+                        )}
                     </ul>
                 </div>
             </div>
@@ -55,4 +66,4 @@ function Header() {
     );
 }
 
-export default Header;
+export default Cabecera;
