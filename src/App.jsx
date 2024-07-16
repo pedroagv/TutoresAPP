@@ -6,6 +6,7 @@ import Cabecera from './components/Cabecera/Cabecera';
 import RegistroUsuarios from './components/RegistroUsuarios/RegistroUsuarios';
 import Pata from './components/Inicio/Pata';
 import LoginForm from './components/RegistroUsuarios/LoginForm';
+import ResultadosTutores from './components/BusquedaTutores/ResultadosTutores';
 
 
 function App() {
@@ -40,6 +41,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/registro-de-usuarios" element={<RegistroUsuarios />} />
           <Route path="/iniciar-sesion" element={<LoginForm onLogin={handleLogin} />} />
+          <Route path="/resultados-tutores" element={<ResultadosTutores />} />
+
           {/* <Route path="/iniciar-sesion" element={<LoginForm />} /> */}
 
         </Routes>

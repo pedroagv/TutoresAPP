@@ -23,9 +23,9 @@ function Cabecera({ user, onLogout }) {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                            <a className="nav-link" href="#Turores">
+                            <Link className="nav-link" to="/resultados-tutores">
                                 Turores
-                            </a>
+                            </Link>
                         </li>
                         <li className="nav-item">
                             <a className="nav-link" href="#Materias">
